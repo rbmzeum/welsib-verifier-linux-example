@@ -1,0 +1,16 @@
+cargo-features = ["edition2024"]
+
+[package]
+name = "linux-cli"
+version = "0.1.0"
+edition = "2024"
+
+[profile.release]
+opt-level = 3               # Use slightly better optimizations.
+overflow-checks = false     # Disable integer overflow checks.
+rpath = true
+
+[dependencies]
+base64 = "0.22.1"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.115"
